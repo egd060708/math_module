@@ -1,0 +1,6 @@
+D:/Git_Project/github/math_module/build/CMakeFiles/Testfile.dir
+D:/Git_Project/github/math_module/build/CMakeFiles/edit_cache.dir
+D:/Git_Project/github/math_module/build/CMakeFiles/rebuild_cache.dir
+D:/Git_Project/github/math_module/build/C/CMakeFiles/MathC.dir
+D:/Git_Project/github/math_module/build/C/CMakeFiles/edit_cache.dir
+D:/Git_Project/github/math_module/build/C/CMakeFiles/rebuild_cache.dir
