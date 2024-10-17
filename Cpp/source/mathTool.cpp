@@ -2,6 +2,62 @@
 #include <math.h>
 #include <iostream>
 
+/* n维向量点乘 */
+double dot_vnd_vnd(double* _rownd, double* _colnd, int d)
+{
+	double result = 0;
+	for (int i = 0; i < d; i++)
+	{
+		result += _rownd[i] * _colnd[i];
+	}
+	return result;
+}
+
+/* n维矩阵点乘 */
+void dot_mnd_mnd(double** _dst, double** _mndL, double** _mndR, int d)
+{
+	for (int i = 0; i < d; i++)
+	{
+		for (int j = 0; j < d; j++)
+		{
+			double res = 0;
+			for (int k = 0; k < d; k++)
+			{
+				res += _mndL[i][k] * _mndR[k][j];
+			}
+			_dst[i][j] = res;
+		}
+	}
+}
+
+/* n维矩阵与n维向量点乘 */
+void mult_mnd_vnd(double* _dst, double** _mnd, double* _colnd, int d)
+{
+	for (int i = 0; i < d; i++)
+	{
+		double res = 0;
+		for (int j = 0; j < d; j++)
+		{
+			res += _mnd[i][j] * _colnd[j];
+		}
+		_dst[i] = res;
+	}
+}
+
+/* n维向量与n维矩阵点乘 */
+void mult_vnd_mnd(double* _dst, double* _rownd, double** _mnd, int d)
+{
+	for (int i = 0; i < d; i++)
+	{
+		double res = 0;
+		for (int j = 0; j < d; j++)
+		{
+			res += _rownd[j] * _mnd[j][i];
+		}
+		_dst[i] = res;
+	}
+}
+
 /* 三维向量点乘 */
 double dot_v3d_v3d(double _row3d[3], double _col3d[3])
 {
@@ -27,7 +83,7 @@ void mult_m3d_v3d(double _dst[3], double _m3d[3][3], double _col3d[3])
 	}
 }
 
-/* 四维矩阵与三维向量相乘 */
+/* 四维矩阵与四维向量相乘 */
 void mult_m4d_v4d(double _dst[4], double _m4d[4][4], double _col4d[4])
 {
 	for (int i = 0; i < 4; i++)
