@@ -242,3 +242,9 @@ double slopeConstrain(double _tar, double _cur, double _acc, double _dec)
 		return _tar;
 	}
 }
+
+/* 上下界限制 */
+double constrain(double _obj, double _up, double _down)
+{
+	return ((_obj > _up) ? _up : ((_obj < _down) ? _down : _obj));
+}
