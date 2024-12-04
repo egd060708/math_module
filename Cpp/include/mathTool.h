@@ -5,6 +5,7 @@ double dot_vnd_vnd(double* _rownd, double* _colnd, int d);
 void dot_mnd_mnd(double** _dst, double** _mndL, double** _mndR, int d);
 void mult_mnd_vnd(double* _dst, double** _mnd, double* _colnd, int d);
 void mult_vnd_mnd(double* _dst, double* _rownd, double** _mnd, int d);
+void transpose_mnd(double** _dst, double** _mnd, int d);
 
 double dot_v3d_v3d(double _row3d[3], double _col3d[3]);
 void mult_m3d_v3d(double _dst[3], double _m3d[3][3], double _col3d[3]);

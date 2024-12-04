@@ -43,3 +43,29 @@ void printM(std::string _n, double** _m, int _row, int _col)
         }
     }
 }
+
+void print3M(std::string _n, double _m[3][3])
+{
+    std::cout << _n << " :  [";
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            if (j != 3 - 1)
+            {
+                std::cout << " " << *((double*)_m + 3 * i + j) << ",";
+            }
+            else
+            {
+                if (i != 3 - 1)
+                {
+                    std::cout << " " << *((double*)_m + 3 * i + j) << ";";
+                }
+                else
+                {
+                    std::cout << " " << *((double*)_m + 3 * i + j) << "]" << std::endl;
+                }
+            }
+        }
+    }
+}

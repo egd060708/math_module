@@ -58,6 +58,18 @@ void mult_vnd_mnd(double* _dst, double* _rownd, double** _mnd, int d)
 	}
 }
 
+/* n维矩阵转置 */
+void transpose_mnd(double** _dst, double** _mnd, int d)
+{
+	for (int i = 0; i < d; i++)
+	{
+		for (int j = 0; j < d; j++)
+		{
+			_dst[j][i] = _mnd[i][j];
+		}
+	}
+}
+
 /* 三维向量点乘 */
 double dot_v3d_v3d(double _row3d[3], double _col3d[3])
 {
